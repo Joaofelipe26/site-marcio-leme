@@ -9,7 +9,7 @@ The website text is in Portuguese.
 |---|---|
 | `index.html` | Content and structure |
 | `styles.css` | Visual design (navy blue and gold, from the logo) |
-| `script.js` | Monogram animation, phone menu, practice areas, timeline, office tabs and map |
+| `script.js` | Monogram animation, phone menu, tabs, practice areas, timeline and maps |
 | `assets/logo-mla.png` | Original logo, transparent background |
 | `assets/favicon.svg` | Browser icon |
 
@@ -18,11 +18,12 @@ The website has no build step and no dependencies. To see it, open `index.html` 
 ## Sections
 
 1. Início: main title, monogram animation and three key facts.
-2. § 1 O escritório: "about us" text and three work types.
-3. § 2 Áreas de atuação: 3 main areas (Empresarial, Cível e Consumidor, Trabalhista) and 9 other areas.
-4. § 3 Trajetória: photo area, profile and timeline.
-5. § 4 Diferenciais: 9 items.
-6. § 5 Contato: WhatsApp, email, office tabs and a map.
+2. § 1 O escritório: tabs "Quem somos" and "Diferenciais".
+3. § 2 Áreas de atuação: vertical tabs on desktop, accordion on phones. 3 main areas and 9 other areas.
+4. § 3 Trajetória: photo area and tabs "Perfil" and "Formação" (timeline).
+5. § 4 Contato: tabs "Fale conosco", "São Paulo" and "Itapetininga", with a map for each office.
+
+The tabs keep the page short. All tab content is in the HTML, so search engines can read it.
 
 ## Add the photo
 

@@ -1,5 +1,6 @@
 (function () {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const mobile = window.matchMedia('(max-width: 920px)');
   const header = document.querySelector('.header');
   const burger = document.getElementById('burger');
   const nav = document.getElementById('nav');
@@ -22,33 +23,93 @@
 
   /* Rolagem: uma atualização por quadro */
   const seal = document.querySelector('.hero__seal');
-  const timeline = document.getElementById('timeline');
-  const items = [...timeline.querySelectorAll('.tl')];
   let ticking = false;
-
   const update = () => {
     ticking = false;
     const y = window.scrollY;
-    const vh = window.innerHeight;
     header.classList.toggle('is-scrolled', y > 40);
-
-    if (!reduce && seal && y < vh * 1.2) {
+    if (!reduce && seal && y < window.innerHeight * 1.2) {
       seal.style.transform = `translateY(calc(-50% + ${y * 0.22}px))`;
     }
+  };
+  window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  update();
 
-    const r = timeline.getBoundingClientRect();
-    const p = reduce ? 1 : Math.min(1, Math.max(0, (vh * 0.72 - r.top) / r.height));
-    timeline.style.setProperty('--p', p.toFixed(3));
-    const reach = r.top + r.height * p;
-    items.forEach(li => {
-      const dot = li.getBoundingClientRect().top + 14;
-      li.classList.toggle('is-lit', dot <= reach + 1);
+  /* Linha do tempo: desenha quando a aba "Formação" abre */
+  const timeline = document.getElementById('timeline');
+  const drawTimeline = () => {
+    timeline.classList.remove('is-drawn');
+    void timeline.offsetWidth; // reinicia a animação
+    timeline.classList.add('is-drawn');
+  };
+
+  /* Abas horizontais */
+  document.querySelectorAll('[data-tabs]:not([data-vertical])').forEach(group => {
+    const tabs = [...group.querySelectorAll('[role="tab"]')];
+    const select = tab => {
+      tabs.forEach(t => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+      if (tab.getAttribute('aria-controls') === 'p-form') drawTimeline();
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => select(t));
+      t.addEventListener('keydown', e => {
+        const keys = { ArrowRight: 1, ArrowLeft: -1 };
+        if (!(e.key in keys)) return;
+        e.preventDefault();
+        const next = tabs[(i + keys[e.key] + tabs.length) % tabs.length];
+        next.focus(); select(next);
+      });
+    });
+  });
+
+  /* Áreas de atuação: abas verticais no computador, acordeão no celular */
+  const vbtns = [...document.querySelectorAll('.vtab__btn')];
+  const showArea = (btn, open) => {
+    vbtns.forEach(b => {
+      const on = b === btn && open;
+      b.setAttribute('aria-expanded', String(on));
+      document.getElementById(b.getAttribute('aria-controls')).hidden = !on;
     });
   };
-  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
-  update();
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
+  vbtns.forEach((b, i) => {
+    b.addEventListener('click', () => {
+      const isOpen = b.getAttribute('aria-expanded') === 'true';
+      if (mobile.matches) {                       // celular: abre e fecha
+        showArea(b, !isOpen);
+        b.scrollIntoView({ block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
+      } else showArea(b, true);                   // computador: sempre uma aberta
+    });
+    b.addEventListener('keydown', e => {
+      const keys = { ArrowDown: 1, ArrowUp: -1 };
+      if (!(e.key in keys)) return;
+      e.preventDefault();
+      const next = vbtns[(i + keys[e.key] + vbtns.length) % vbtns.length];
+      next.focus(); showArea(next, true);
+    });
+  });
+  /* No celular, a lista começa fechada */
+  if (mobile.matches) showArea(null, false);
+  /* No computador, nunca deixar o painel vazio */
+  mobile.addEventListener('change', () => {
+    if (!mobile.matches && !vbtns.some(b => b.getAttribute('aria-expanded') === 'true')) showArea(vbtns[0], true);
+  });
+
+  /* Mapas: carregam do Google só depois do clique */
+  document.querySelectorAll('.map').forEach(map => {
+    map.querySelector('.map__load').addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = 'https://maps.google.com/maps?q=' + encodeURIComponent(map.dataset.q) + '&z=16&output=embed';
+      f.title = map.dataset.title;
+      f.referrerPolicy = 'no-referrer-when-downgrade';
+      map.innerHTML = '';
+      map.appendChild(f);
+    });
+  });
 
   /* Foto: abre de baixo para cima quando aparece */
   const portrait = document.querySelector('.portrait');
@@ -59,76 +120,6 @@
     /* observar o bloco pai: o clip-path esconde a própria foto do observer */
     io.observe(portrait.parentElement);
   }
-
-  /* Áreas principais: "Ler mais" */
-  document.querySelectorAll('.feat__toggle').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const feat = btn.closest('.feat');
-      const open = feat.classList.toggle('is-open');
-      btn.setAttribute('aria-expanded', String(open));
-      btn.textContent = open ? 'Ler menos' : 'Ler mais';
-    });
-  });
-
-  /* Outras áreas: acordeão */
-  document.querySelectorAll('.area__head').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const open = btn.closest('.area').classList.toggle('is-open');
-      btn.setAttribute('aria-expanded', String(open));
-    });
-  });
-
-  /* Escritórios e mapa (carrega só depois do clique) */
-  const offices = {
-    sp: {
-      q: 'Rua Cubatão, 472 - Paraíso, São Paulo - SP, 04013-001',
-      title: 'Mapa do escritório em São Paulo'
-    },
-    itp: {
-      q: 'Rua Major Fonseca, 85 - Centro, Itapetininga - SP, 18200-022',
-      title: 'Mapa do escritório em Itapetininga'
-    }
-  };
-  let current = 'sp';
-  let mapOn = false;
-  const map = document.getElementById('map');
-  const ext = document.getElementById('map-ext');
-  const panel = document.getElementById('office-panel');
-  const tabs = [...document.querySelectorAll('.office-tab')];
-
-  const renderMap = () => {
-    const o = offices[current];
-    ext.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(o.q);
-    if (!mapOn) return;
-    map.innerHTML = '';
-    const f = document.createElement('iframe');
-    f.src = 'https://maps.google.com/maps?q=' + encodeURIComponent(o.q) + '&z=16&output=embed';
-    f.title = o.title;
-    f.loading = 'lazy';
-    f.referrerPolicy = 'no-referrer-when-downgrade';
-    map.appendChild(f);
-  };
-  document.getElementById('map-load').addEventListener('click', () => { mapOn = true; renderMap(); });
-
-  const select = tab => {
-    current = tab.dataset.office;
-    tabs.forEach(t => {
-      const on = t === tab;
-      t.setAttribute('aria-selected', String(on));
-      t.tabIndex = on ? 0 : -1;
-    });
-    panel.setAttribute('aria-labelledby', tab.id);
-    panel.querySelectorAll('.office__addr').forEach(a => { a.hidden = a.dataset.addr !== current; });
-    renderMap();
-  };
-  tabs.forEach((t, i) => {
-    t.addEventListener('click', () => select(t));
-    t.addEventListener('keydown', e => {
-      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-      const next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
-      next.focus(); select(next);
-    });
-  });
 
   /* Link ativo no menu */
   const links = [...nav.querySelectorAll('a[href^="#"]')];

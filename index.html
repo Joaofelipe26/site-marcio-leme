@@ -51,7 +51,6 @@
       <a href="#escritorio">Escritório</a>
       <a href="#atuacao">Áreas de atuação</a>
       <a href="#trajetoria">Trajetória</a>
-      <a href="#diferenciais">Diferenciais</a>
       <a href="#contato">Contato</a>
       <a class="btn btn--gold btn--sm nav__cta" href="https://wa.me/5515991918883?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener">Agendar atendimento</a>
     </nav>
@@ -97,46 +96,71 @@
   <a href="#escritorio" class="scroll-line" aria-label="Ir para o conteúdo"><span></span></a>
 </section>
 
-<!-- ============ § 1 ESCRITÓRIO ============ -->
+<!-- ============ § 1 ESCRITÓRIO (abas: Quem somos | Diferenciais) ============ -->
 <section class="section" id="escritorio">
-  <div class="wrap split">
-    <div class="split__head">
+  <div class="wrap">
+    <div class="section__head">
       <p class="sect"><span class="sect__n">§ 1</span> O escritório</p>
       <h2 class="title">Uma trajetória consolidada a serviço dos seus interesses</h2>
     </div>
-    <div class="split__body prose">
-      <p>
-        Escritório de advocacia e consultoria jurídica com atuação desde 2007, com foco em Direito Civil,
-        Empresarial, Tributário, Trabalhista, Criminal, de Família e Sucessões, Imobiliário e Administrativo.
-      </p>
-      <p>
-        Oferecemos assessoria jurídica estratégica, preventiva e contenciosa, priorizando a segurança jurídica,
-        a proteção patrimonial, a redução de riscos e a defesa dos interesses de nossos clientes.
-      </p>
-      <p>
-        O atendimento é personalizado, com análise individualizada de cada caso e acompanhamento próximo
-        em todas as etapas da demanda.
-      </p>
-    </div>
-  </div>
 
-  <div class="wrap pillars">
-    <article class="pillar">
-      <h3>Preventiva</h3>
-      <p>Orientação antes do conflito: contratos, estruturação de negócios, auditorias e conformidade legal.</p>
-    </article>
-    <article class="pillar">
-      <h3>Consultiva</h3>
-      <p>Pareceres e planejamento tributário, societário e sucessório para decisões seguras.</p>
-    </article>
-    <article class="pillar">
-      <h3>Contenciosa</h3>
-      <p>Defesa técnica em processos judiciais e administrativos, em todas as instâncias e órgãos.</p>
-    </article>
+    <div class="tabs" data-tabs>
+      <div class="tabs__list" role="tablist" aria-label="O escritório">
+        <button class="tab" role="tab" id="t-quem" aria-controls="p-quem" aria-selected="true">Quem somos</button>
+        <button class="tab" role="tab" id="t-dif" aria-controls="p-dif" aria-selected="false" tabindex="-1">Diferenciais</button>
+      </div>
+
+      <div class="tabs__panel" role="tabpanel" id="p-quem" aria-labelledby="t-quem">
+        <div class="about">
+          <div class="prose">
+            <p>
+              Escritório de advocacia e consultoria jurídica com atuação desde 2007, com foco em Direito Civil,
+              Empresarial, Tributário, Trabalhista, Criminal, de Família e Sucessões, Imobiliário e Administrativo.
+            </p>
+            <p>
+              Oferecemos assessoria jurídica estratégica, preventiva e contenciosa, priorizando a segurança jurídica,
+              a proteção patrimonial, a redução de riscos e a defesa dos interesses de nossos clientes.
+            </p>
+            <p>
+              O atendimento é personalizado, com análise individualizada de cada caso e acompanhamento próximo
+              em todas as etapas da demanda.
+            </p>
+          </div>
+          <div class="pillars">
+            <article class="pillar">
+              <h3>Preventiva</h3>
+              <p>Orientação antes do conflito: contratos, estruturação de negócios, auditorias e conformidade legal.</p>
+            </article>
+            <article class="pillar">
+              <h3>Consultiva</h3>
+              <p>Pareceres e planejamento tributário, societário e sucessório para decisões seguras.</p>
+            </article>
+            <article class="pillar">
+              <h3>Contenciosa</h3>
+              <p>Defesa técnica em processos judiciais e administrativos, em todas as instâncias e órgãos.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="tabs__panel" role="tabpanel" id="p-dif" aria-labelledby="t-dif" hidden>
+        <ul class="diffs">
+          <li>Escritório estabelecido desde 2007</li>
+          <li>Experiência em diversas áreas do Direito</li>
+          <li>Atuação perante tribunais, conselhos, órgãos públicos e entidades administrativas</li>
+          <li>Experiência em sindicâncias e processos administrativos disciplinares</li>
+          <li>Atendimento personalizado e estratégico</li>
+          <li>Atuação preventiva, consultiva e contenciosa</li>
+          <li>Análise individualizada e acompanhamento próximo de cada caso</li>
+          <li>Compromisso com ética, sigilo profissional e segurança jurídica</li>
+          <li>Disponibilidade para reuniões presenciais e on-line</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ============ § 2 ÁREAS DE ATUAÇÃO ============ -->
+<!-- ============ § 2 ÁREAS DE ATUAÇÃO (abas verticais; acordeão no celular) ============ -->
 <section class="section section--tint" id="atuacao">
   <div class="wrap">
     <div class="section__head">
@@ -144,129 +168,114 @@
       <h2 class="title">Atuação ampla, com análise individualizada de cada caso</h2>
     </div>
 
-    <h3 class="subhead">Principais áreas</h3>
-    <div class="featured">
-      <article class="feat">
-        <h4 class="feat__t">Direito Empresarial e Contratual</h4>
-        <p>Elaboração, análise e revisão de contratos, consultoria societária, constituição e estruturação de empresas, prevenção de conflitos e orientação jurídica para empresas e empresários.</p>
-        <div class="feat__more" id="feat-emp"><div>
+    <div class="vtabs" data-tabs data-vertical>
+      <p class="vtabs__group">Principais áreas</p>
+
+      <div class="vtab">
+        <button class="vtab__btn is-main" id="a-emp" aria-controls="ap-emp" aria-expanded="true">Direito Empresarial e Contratual</button>
+        <div class="vtab__panel" id="ap-emp" role="region" aria-labelledby="a-emp">
+          <p class="vtab__tag">Área principal</p>
+          <h3>Direito Empresarial e Contratual</h3>
+          <p>Elaboração, análise e revisão de contratos cíveis e consumeristas, negociações empresariais, consultoria societária, constituição e estruturação de negócios, prevenção de conflitos e orientação jurídica para empresas e empresários.</p>
           <p>Acompanhamento em reuniões e negociações contratuais, cobranças e notificações extrajudiciais e judiciais, defesas administrativas fiscais e consumeristas e execuções judiciais.</p>
           <p>Revisão de contrato social, entrada e retirada de sócios, planejamento para aquisição de ativos empresariais. Holding patrimonial, familiar, de controle, administrativa e de participação. Levantamento de certidões, consultoria e suporte em licitações públicas.</p>
-        </div></div>
-        <button class="feat__toggle" aria-expanded="false" aria-controls="feat-emp">Ler mais</button>
-      </article>
-      <article class="feat">
-        <h4 class="feat__t">Direito Cível e do Consumidor</h4>
-        <p>Ações de responsabilidade civil, relações contratuais, indenizações, cobranças e obrigações, na defesa de empresas, fornecedores e consumidores.</p>
-        <div class="feat__more" id="feat-civ"><div>
+        </div>
+      </div>
+      <div class="vtab">
+        <button class="vtab__btn is-main" id="a-civ" aria-controls="ap-civ" aria-expanded="false">Direito Cível e do Consumidor</button>
+        <div class="vtab__panel" id="ap-civ" role="region" aria-labelledby="a-civ" hidden>
+          <p class="vtab__tag">Área principal</p>
+          <h3>Direito Cível e do Consumidor</h3>
+          <p>Ações de responsabilidade civil, relações contratuais, indenizações, cobranças e obrigações, na defesa de empresas, fornecedores e consumidores.</p>
           <p>Representação em processos judiciais e administrativos, perante o Procon e em execuções judiciais.</p>
-        </div></div>
-        <button class="feat__toggle" aria-expanded="false" aria-controls="feat-civ">Ler mais</button>
-      </article>
-      <article class="feat">
-        <h4 class="feat__t">Direito Trabalhista</h4>
-        <p>Assessoria preventiva e contenciosa para o cumprimento integral da legislação trabalhista, com auditorias, revisão de contratos e defesa em reclamações trabalhistas.</p>
-        <div class="feat__more" id="feat-trab"><div>
-          <p>Medicina do trabalho, controle de EPIs, PPP, PCMSO, Normas Regulamentadoras, fiscalizações e acidentes de trabalho.</p>
+        </div>
+      </div>
+      <div class="vtab">
+        <button class="vtab__btn is-main" id="a-trab" aria-controls="ap-trab" aria-expanded="false">Direito Trabalhista</button>
+        <div class="vtab__panel" id="ap-trab" role="region" aria-labelledby="a-trab" hidden>
+          <p class="vtab__tag">Área principal</p>
+          <h3>Direito Trabalhista</h3>
+          <p>Assessoria preventiva e contenciosa para o cumprimento integral da legislação trabalhista, incluindo medicina do trabalho, controle de EPIs, PPP, PCMSO, Normas Regulamentadoras, fiscalizações e acidentes de trabalho.</p>
           <p>Gestão disciplinar (advertências, suspensões e multas cabíveis), acordos de banco de horas e planejamento de jornadas e escalas, em conformidade com a lei.</p>
-        </div></div>
-        <button class="feat__toggle" aria-expanded="false" aria-controls="feat-trab">Ler mais</button>
-      </article>
-    </div>
+          <p>Auditorias trabalhistas, elaboração e revisão de documentos e contratos, negociações e defesa em reclamações trabalhistas.</p>
+        </div>
+      </div>
 
-    <h3 class="subhead">Outras áreas</h3>
-    <div class="areas" id="areas">
-      <article class="area">
-        <button class="area__head" aria-expanded="false">
-          <span class="area__t">Direito Securitário</span>
-          <span class="area__ico" aria-hidden="true"></span>
-        </button>
-        <div class="area__body"><div>
+      <p class="vtabs__group">Outras áreas</p>
+
+      <div class="vtab">
+        <button class="vtab__btn" id="a-seg" aria-controls="ap-seg" aria-expanded="false">Direito Securitário</button>
+        <div class="vtab__panel" id="ap-seg" role="region" aria-labelledby="a-seg" hidden>
+          <h3>Direito Securitário</h3>
           <p>Consultoria em contratos de seguro (vida, patrimoniais, empresariais, responsabilidade civil, entre outros), análise e revisão de apólices, regulação de sinistros e prevenção de litígios entre segurados, beneficiários e seguradoras.</p>
           <p>Atuação preventiva e contenciosa em cobranças de indenizações securitárias, negativas de cobertura e recusas de pagamento, inclusive em litígios judiciais e procedimentos arbitrais do mercado de seguros e resseguros.</p>
-        </div></div>
-      </article>
-      <article class="area">
-        <button class="area__head" aria-expanded="false">
-          <span class="area__t">Direito Tributário</span>
-          <span class="area__ico" aria-hidden="true"></span>
-        </button>
-        <div class="area__body"><div>
+        </div>
+      </div>
+      <div class="vtab">
+        <button class="vtab__btn" id="a-trib" aria-controls="ap-trib" aria-expanded="false">Direito Tributário</button>
+        <div class="vtab__panel" id="ap-trib" role="region" aria-labelledby="a-trib" hidden>
+          <h3>Direito Tributário</h3>
           <p>Consultoria e assessoria tributária, análise de obrigações fiscais, planejamento tributário, defesas administrativas e judiciais, execuções fiscais e contencioso tributário.</p>
           <p>Defesa em processos administrativos e ações penais relativas a crimes contra a ordem tributária, com acompanhamento de investigações nas esferas estadual e federal.</p>
-        </div></div>
-      </article>
-      <article class="area">
-        <button class="area__head" aria-expanded="false">
-          <span class="area__t">Direito de Família e Sucessões</span>
-          <span class="area__ico" aria-hidden="true"></span>
-        </button>
-        <div class="area__body"><div>
+        </div>
+      </div>
+      <div class="vtab">
+        <button class="vtab__btn" id="a-fam" aria-controls="ap-fam" aria-expanded="false">Direito de Família e Sucessões</button>
+        <div class="vtab__panel" id="ap-fam" role="region" aria-labelledby="a-fam" hidden>
+          <h3>Direito de Família e Sucessões</h3>
           <p>Divórcio, dissolução de união estável, guarda, convivência familiar, alimentos, investigação e reconhecimento de paternidade e partilha de bens.</p>
           <p>Inventários judiciais e extrajudiciais, arrolamentos, testamentos, planejamento sucessório, sobrepartilha e defesa dos interesses de herdeiros e legatários.</p>
-        </div></div>
-      </article>
-      <article class="area">
-        <button class="area__head" aria-expanded="false">
-          <span class="area__t">Direito Imobiliário</span>
-          <span class="area__ico" aria-hidden="true"></span>
-        </button>
-        <div class="area__body"><div>
+        </div>
+      </div>
+      <div class="vtab">
+        <button class="vtab__btn" id="a-imo" aria-controls="ap-imo" aria-expanded="false">Direito Imobiliário</button>
+        <div class="vtab__panel" id="ap-imo" role="region" aria-labelledby="a-imo" hidden>
+          <h3>Direito Imobiliário</h3>
           <p>Compra e venda de imóveis, análise e elaboração de contratos, locações, regularização imobiliária administrativa e judicial, usucapião, incorporações, condomínios e questões possessórias.</p>
-        </div></div>
-      </article>
-      <article class="area">
-        <button class="area__head" aria-expanded="false">
-          <span class="area__t">Direito Administrativo e PAD</span>
-          <span class="area__ico" aria-hidden="true"></span>
-        </button>
-        <div class="area__body"><div>
+        </div>
+      </div>
+      <div class="vtab">
+        <button class="vtab__btn" id="a-adm" aria-controls="ap-adm" aria-expanded="false">Direito Administrativo e PAD</button>
+        <div class="vtab__panel" id="ap-adm" role="region" aria-labelledby="a-adm" hidden>
+          <h3>Direito Administrativo e PAD</h3>
           <p>Processos administrativos, licitações e contratos administrativos, servidores públicos, responsabilidade administrativa e defesa perante órgãos públicos.</p>
           <p>Elaboração de defesa e acompanhamento de sindicâncias e processos administrativos disciplinares.</p>
-        </div></div>
-      </article>
-      <article class="area">
-        <button class="area__head" aria-expanded="false">
-          <span class="area__t">Direito Criminal</span>
-          <span class="area__ico" aria-hidden="true"></span>
-        </button>
-        <div class="area__body"><div>
+        </div>
+      </div>
+      <div class="vtab">
+        <button class="vtab__btn" id="a-crim" aria-controls="ap-crim" aria-expanded="false">Direito Criminal</button>
+        <div class="vtab__panel" id="ap-crim" role="region" aria-labelledby="a-crim" hidden>
+          <h3>Direito Criminal</h3>
           <p>Inquéritos policiais e investigações nas esferas estadual e federal, defesa em ações penais, assistência à acusação, representação de vítimas e notícias-crime.</p>
           <p>Audiências, recursos criminais e processos relativos a crimes empresariais, tributários e contra o patrimônio.</p>
-        </div></div>
-      </article>
-      <article class="area">
-        <button class="area__head" aria-expanded="false">
-          <span class="area__t">Direito de Trânsito</span>
-          <span class="area__ico" aria-hidden="true"></span>
-        </button>
-        <div class="area__body"><div>
+        </div>
+      </div>
+      <div class="vtab">
+        <button class="vtab__btn" id="a-tran" aria-controls="ap-tran" aria-expanded="false">Direito de Trânsito</button>
+        <div class="vtab__panel" id="ap-tran" role="region" aria-labelledby="a-tran" hidden>
+          <h3>Direito de Trânsito</h3>
           <p>Defesa em autuações, multas e processos administrativos, recursos perante os órgãos de trânsito e orientação em acidentes e responsabilidades, inclusive para frotas de empresas.</p>
-        </div></div>
-      </article>
-      <article class="area">
-        <button class="area__head" aria-expanded="false">
-          <span class="area__t">Tribunais, Conselhos e Órgãos Públicos</span>
-          <span class="area__ico" aria-hidden="true"></span>
-        </button>
-        <div class="area__body"><div>
+        </div>
+      </div>
+      <div class="vtab">
+        <button class="vtab__btn" id="a-trib2" aria-controls="ap-trib2" aria-expanded="false">Tribunais, Conselhos e Órgãos Públicos</button>
+        <div class="vtab__panel" id="ap-trib2" role="region" aria-labelledby="a-trib2" hidden>
+          <h3>Tribunais, Conselhos e Órgãos Públicos</h3>
           <p>Representação perante tribunais judiciais e administrativos, conselhos profissionais e órgãos colegiados, com recursos, memoriais, sustentações orais e acompanhamento de julgamentos.</p>
-        </div></div>
-      </article>
-      <article class="area">
-        <button class="area__head" aria-expanded="false">
-          <span class="area__t">Métodos Autocompositivos</span>
-          <span class="area__ico" aria-hidden="true"></span>
-        </button>
-        <div class="area__body"><div>
+        </div>
+      </div>
+      <div class="vtab">
+        <button class="vtab__btn" id="a-auto" aria-controls="ap-auto" aria-expanded="false">Métodos Autocompositivos</button>
+        <div class="vtab__panel" id="ap-auto" role="region" aria-labelledby="a-auto" hidden>
+          <h3>Métodos Autocompositivos</h3>
           <p>Assessoria jurídica em práticas colaborativas, mediação, conciliação e negociação, com acompanhamento das sessões e elaboração ou revisão dos termos de acordo.</p>
-        </div></div>
-      </article>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ § 3 TRAJETÓRIA ============ -->
+<!-- ============ § 3 TRAJETÓRIA (abas: Perfil | Formação) ============ -->
 <section class="section section--dark" id="trajetoria">
   <div class="wrap split">
     <div class="split__head">
@@ -277,115 +286,130 @@
       </figure>
       <p class="sect sect--dark"><span class="sect__n">§ 3</span> Trajetória</p>
       <h2 class="title">Márcio Leme de Almeida</h2>
-      <p class="profile">
-        Advogado inscrito na OAB/SP sob nº 250.781, com formação jurídica concluída em 2003 e escritório
-        de advocacia estabelecido desde 2007.
-      </p>
-      <p class="profile">
-        Atuação consultiva, preventiva e contenciosa nas áreas cível, empresarial, tributária, trabalhista,
-        criminal, família e sucessões, imobiliária e administrativa.
-      </p>
     </div>
 
-    <ol class="timeline" id="timeline">
-      <li class="tl">
-        <span class="tl__year">2003</span>
-        <div>
-          <h3>Graduação em Direito</h3>
-          <p>Fundação Karnig Bazarian (FKB), Faculdades Integradas de Itapetininga.</p>
-        </div>
-      </li>
-      <li class="tl">
-        <span class="tl__year">2007</span>
-        <div>
-          <h3>Fundação do escritório</h3>
-          <p>Início da advocacia própria, com atuação consultiva e contenciosa.</p>
-        </div>
-      </li>
-      <li class="tl">
-        <span class="tl__year">2014<small>–2017</small></span>
-        <div>
-          <h3>Especialização em Direito Processual Civil</h3>
-          <p>Escola Superior de Advocacia da OAB (OAB ESA).</p>
-        </div>
-      </li>
-      <li class="tl">
-        <span class="tl__year">2018<small>–2020</small></span>
-        <div>
-          <h3>Especialização em Direito Tributário</h3>
-          <p>Pontifícia Universidade Católica de Minas Gerais (PUC Minas).</p>
-        </div>
-      </li>
-      <li class="tl">
-        <span class="tl__year">Hoje</span>
-        <div>
-          <h3>São Paulo e Itapetininga</h3>
-          <p>Atendimento presencial nos dois endereços e reuniões on-line.</p>
-        </div>
-      </li>
-    </ol>
+    <div class="tabs tabs--dark" data-tabs>
+      <div class="tabs__list" role="tablist" aria-label="Trajetória">
+        <button class="tab" role="tab" id="t-perfil" aria-controls="p-perfil" aria-selected="true">Perfil</button>
+        <button class="tab" role="tab" id="t-form" aria-controls="p-form" aria-selected="false" tabindex="-1">Formação</button>
+      </div>
+
+      <div class="tabs__panel" role="tabpanel" id="p-perfil" aria-labelledby="t-perfil">
+        <p class="profile">
+          Advogado inscrito na OAB/SP sob nº 250.781, com formação jurídica concluída em 2003 e escritório
+          de advocacia estabelecido desde 2007.
+        </p>
+        <p class="profile">
+          Atuação consultiva, preventiva e contenciosa nas áreas cível, empresarial, tributária, trabalhista,
+          criminal, família e sucessões, imobiliária e administrativa.
+        </p>
+        <p class="profile">
+          Especialista em Direito Processual Civil (OAB ESA) e em Direito Tributário (PUC Minas).
+        </p>
+      </div>
+
+      <div class="tabs__panel" role="tabpanel" id="p-form" aria-labelledby="t-form" hidden>
+        <ol class="timeline" id="timeline">
+          <li class="tl" style="--i:0">
+            <span class="tl__year">2003</span>
+            <div>
+              <h3>Graduação em Direito</h3>
+              <p>Fundação Karnig Bazarian (FKB), Faculdades Integradas de Itapetininga.</p>
+            </div>
+          </li>
+          <li class="tl" style="--i:1">
+            <span class="tl__year">2007</span>
+            <div>
+              <h3>Fundação do escritório</h3>
+              <p>Início da advocacia própria, com atuação consultiva e contenciosa.</p>
+            </div>
+          </li>
+          <li class="tl" style="--i:2">
+            <span class="tl__year">2014<small>–2017</small></span>
+            <div>
+              <h3>Especialização em Direito Processual Civil</h3>
+              <p>Escola Superior de Advocacia da OAB (OAB ESA).</p>
+            </div>
+          </li>
+          <li class="tl" style="--i:3">
+            <span class="tl__year">2018<small>–2020</small></span>
+            <div>
+              <h3>Especialização em Direito Tributário</h3>
+              <p>Pontifícia Universidade Católica de Minas Gerais (PUC Minas).</p>
+            </div>
+          </li>
+          <li class="tl" style="--i:4">
+            <span class="tl__year">Hoje</span>
+            <div>
+              <h3>São Paulo e Itapetininga</h3>
+              <p>Atendimento presencial nos dois endereços e reuniões on-line.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ============ § 4 DIFERENCIAIS ============ -->
-<section class="section" id="diferenciais">
-  <div class="wrap">
-    <div class="section__head">
-      <p class="sect"><span class="sect__n">§ 4</span> Diferenciais</p>
-      <h2 class="title">Compromisso com ética, sigilo e segurança jurídica</h2>
-    </div>
-    <ul class="diffs">
-      <li>Escritório estabelecido desde 2007</li>
-      <li>Experiência em diversas áreas do Direito</li>
-      <li>Atuação perante tribunais, conselhos, órgãos públicos e entidades administrativas</li>
-      <li>Experiência em sindicâncias e processos administrativos disciplinares</li>
-      <li>Atendimento personalizado e estratégico</li>
-      <li>Atuação preventiva, consultiva e contenciosa</li>
-      <li>Análise individualizada e acompanhamento próximo de cada caso</li>
-      <li>Compromisso com ética, sigilo profissional e segurança jurídica</li>
-      <li>Disponibilidade para reuniões presenciais e on-line</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ============ § 5 CONTATO ============ -->
+<!-- ============ § 4 CONTATO (abas: Fale conosco | São Paulo | Itapetininga) ============ -->
 <section class="section section--tint" id="contato">
   <div class="wrap">
     <div class="section__head">
-      <p class="sect"><span class="sect__n">§ 5</span> Contato</p>
+      <p class="sect"><span class="sect__n">§ 4</span> Contato</p>
       <h2 class="title">Agende um atendimento</h2>
       <p class="section__lead">Reuniões presenciais em São Paulo e Itapetininga, ou on-line.</p>
     </div>
 
-    <div class="contact">
-      <div class="contact__direct">
-        <a class="contact__line" href="https://wa.me/5515991918883?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener">
-          <span class="contact__k">Telefone e WhatsApp</span>
-          <span class="contact__v">(15) 99191-8883</span>
-        </a>
-        <a class="contact__line" href="mailto:marcio.leme@adv.oabsp.org.br">
-          <span class="contact__k">E-mail</span>
-          <span class="contact__v contact__v--sm">marcio.leme@adv.oabsp.org.br</span>
-        </a>
-        <a class="btn btn--gold" href="https://wa.me/5515991918883?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener">Conversar pelo WhatsApp</a>
+    <div class="tabs" data-tabs>
+      <div class="tabs__list" role="tablist" aria-label="Contato">
+        <button class="tab" role="tab" id="t-fale" aria-controls="p-fale" aria-selected="true">Fale conosco</button>
+        <button class="tab" role="tab" id="t-sp" aria-controls="p-sp" aria-selected="false" tabindex="-1">São Paulo</button>
+        <button class="tab" role="tab" id="t-itp" aria-controls="p-itp" aria-selected="false" tabindex="-1">Itapetininga</button>
       </div>
 
-      <div class="offices">
-        <div class="offices__tabs" role="tablist" aria-label="Escolha o escritório">
-          <button role="tab" class="office-tab" aria-selected="true" data-office="sp" id="tab-sp" aria-controls="office-panel">São Paulo</button>
-          <button role="tab" class="office-tab" aria-selected="false" data-office="itp" id="tab-itp" aria-controls="office-panel" tabindex="-1">Itapetininga</button>
+      <div class="tabs__panel" role="tabpanel" id="p-fale" aria-labelledby="t-fale">
+        <div class="contact__direct">
+          <a class="contact__line" href="https://wa.me/5515991918883?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener">
+            <span class="contact__k">Telefone e WhatsApp</span>
+            <span class="contact__v">(15) 99191-8883</span>
+          </a>
+          <a class="contact__line" href="mailto:marcio.leme@adv.oabsp.org.br">
+            <span class="contact__k">E-mail</span>
+            <span class="contact__v contact__v--sm">marcio.leme@adv.oabsp.org.br</span>
+          </a>
+          <a class="btn btn--gold" href="https://wa.me/5515991918883?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener">Conversar pelo WhatsApp</a>
         </div>
-        <div class="office" id="office-panel" role="tabpanel" aria-labelledby="tab-sp">
-          <address class="office__addr" data-addr="sp">Rua Cubatão, nº 472, Paraíso<br>São Paulo/SP, CEP 04013-001</address>
-          <address class="office__addr" data-addr="itp" hidden>Rua Major Fonseca, nº 85, Sala 04, 1º andar, Centro<br>Itapetininga/SP, CEP 18200-022</address>
-          <div class="map" id="map">
+      </div>
+
+      <div class="tabs__panel" role="tabpanel" id="p-sp" aria-labelledby="t-sp" hidden>
+        <div class="office">
+          <div class="office__info">
+            <address class="office__addr">Rua Cubatão, nº 472, Paraíso<br>São Paulo/SP<br>CEP 04013-001</address>
+            <a class="textlink" href="https://www.google.com/maps/search/?api=1&query=Rua+Cubat%C3%A3o%2C+472+-+Para%C3%ADso%2C+S%C3%A3o+Paulo+-+SP%2C+04013-001" target="_blank" rel="noopener">Abrir no Google Maps</a>
+          </div>
+          <div class="map" data-q="Rua Cubatão, 472 - Paraíso, São Paulo - SP, 04013-001" data-title="Mapa do escritório em São Paulo">
             <div class="map__ph">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>
               <p>O mapa é carregado do Google somente após o seu clique.</p>
-              <button class="btn btn--outline btn--sm" id="map-load">Mostrar mapa</button>
+              <button class="btn btn--outline btn--sm map__load">Mostrar mapa</button>
             </div>
           </div>
-          <a class="textlink" id="map-ext" href="https://www.google.com/maps/search/?api=1&query=Rua+Cubat%C3%A3o%2C+472+-+Para%C3%ADso%2C+S%C3%A3o+Paulo+-+SP%2C+04013-001" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        </div>
+      </div>
+
+      <div class="tabs__panel" role="tabpanel" id="p-itp" aria-labelledby="t-itp" hidden>
+        <div class="office">
+          <div class="office__info">
+            <address class="office__addr">Rua Major Fonseca, nº 85, Sala 04, 1º andar, Centro<br>Itapetininga/SP<br>CEP 18200-022</address>
+            <a class="textlink" href="https://www.google.com/maps/search/?api=1&query=Rua+Major+Fonseca%2C+85+-+Centro%2C+Itapetininga+-+SP%2C+18200-022" target="_blank" rel="noopener">Abrir no Google Maps</a>
+          </div>
+          <div class="map" data-q="Rua Major Fonseca, 85 - Centro, Itapetininga - SP, 18200-022" data-title="Mapa do escritório em Itapetininga">
+            <div class="map__ph">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <p>O mapa é carregado do Google somente após o seu clique.</p>
+              <button class="btn btn--outline btn--sm map__load">Mostrar mapa</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
