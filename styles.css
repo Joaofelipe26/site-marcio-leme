@@ -336,24 +336,19 @@ button { font: inherit; }
 .profile { font-size: 17.5px; color: rgba(255,255,255,.78); max-width: 56ch; }
 
 .timeline { list-style: none; margin: 0; padding: 4px 0 0; position: relative; }
-/* trilho de fundo (2 px) */
-.timeline::before { content: ""; position: absolute; left: 0; top: 19px; bottom: 8px; width: 2px; background: var(--line-dark); }
+.timeline::before, .timeline::after { content: ""; position: absolute; left: 0; top: 12px; bottom: 8px; width: 1px; }
+.timeline::before { background: var(--line-dark); }
+.timeline::after { background: var(--gold); transform: scaleY(0); transform-origin: top; }
+.timeline.is-drawn::after { transform: scaleY(1); transition: transform 3.2s var(--ease-io) .2s; }
 .tl { position: relative; display: grid; grid-template-columns: 130px 1fr; gap: 20px; padding: 0 0 40px 34px; }
 .tl:last-child { padding-bottom: 0; }
-/* ponto do ano */
 .tl::before {
-  content: ""; position: absolute; left: -5px; top: 10px; width: 12px; height: 12px; border-radius: 50%;
-  background: var(--navy-800); border: 2px solid var(--gold); z-index: 1;
-}
-/* trecho dourado entre um ano e o próximo: desenha junto com os pontos */
-.tl:not(:last-child)::after {
-  content: ""; position: absolute; left: 0; top: 16px; bottom: -16px; width: 2px;
-  background: var(--gold); transform: scaleY(0); transform-origin: top;
+  content: ""; position: absolute; left: -5px; top: 10px; width: 11px; height: 11px; border-radius: 50%;
+  background: var(--navy-800); border: 1px solid var(--gold);
 }
 .tl > * { opacity: .35; transition: opacity .8s var(--ease-out); }
-.tl.is-on > * { opacity: 1; }
-.tl.is-on::before { background: var(--gold); transition: background .4s var(--ease-out); }
-.tl.is-on:not(:last-child)::after { transform: scaleY(1); transition: transform .8s linear; }
+.timeline.is-drawn .tl > * { opacity: 1; transition-delay: calc(.3s + var(--i) * .7s); }
+.timeline.is-drawn .tl::before { background: var(--gold); transition: background .6s var(--ease-out) calc(.3s + var(--i) * .7s); }
 .tl__year { font-family: var(--serif); font-size: 34px; color: var(--gold-light); line-height: 1; font-variant-numeric: lining-nums; }
 .tl__year small { font-size: 20px; color: rgba(207,176,122,.75); }
 .tl h3 { font-size: 23px; color: #fff; margin: 2px 0 6px; }
@@ -518,6 +513,6 @@ button { font: inherit; }
   .hero__seal text { stroke-dashoffset: 0 !important; }
   .portrait { clip-path: none !important; }
   .tl > * { opacity: 1 !important; }
-  .tl::after { transform: none !important; }
+  .timeline::after { transform: none !important; }
   .scroll-line { display: none; }
 }
