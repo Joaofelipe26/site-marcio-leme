@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://joaofelipe26.github.io/site-marcio-leme/sitemap.xml

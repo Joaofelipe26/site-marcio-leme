@@ -12,6 +12,11 @@ The website text is in Portuguese.
 | `script.js` | Monogram animation, phone menu, tabs, practice areas, timeline and maps |
 | `assets/logo-mla.png` | Original logo, transparent background |
 | `assets/favicon.svg` | Browser icon |
+| `assets/icon-192.png`, `icon-512.png`, `apple-touch-icon.png` | Phone and app icons |
+| `assets/og-image.png` | Share image (1200 x 630 px) for WhatsApp, LinkedIn and others |
+| `assets/fonts/` | Self-hosted fonts (Cormorant Garamond, Manrope) and their licenses (SIL OFL) |
+| `privacidade.html` | Privacy policy page |
+| `robots.txt`, `sitemap.xml`, `site.webmanifest` | Search engine and phone settings |
 
 The website has no build step and no dependencies. To see it, open `index.html` in a browser.
 
@@ -52,6 +57,15 @@ To use a real map image:
 
 The website address is `https://<user>.github.io/<repository>/`.
 To use a domain name, open **Settings > Pages > Custom domain**.
+
+## Change the site address
+
+The full address `https://joaofelipe26.github.io/site-marcio-leme/` is in these files:
+`index.html` (canonical and `og:` tags), `privacidade.html`, `robots.txt` and `sitemap.xml`.
+When the domain name is ready, change the address in all of these files.
+
+Note: search engines read `robots.txt` only at the root of a domain.
+It starts to work when the site has its own domain.
 
 ## Legal compliance
 

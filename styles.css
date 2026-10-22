@@ -2,6 +2,11 @@
    Márcio Leme de Almeida — Advocacia e Consultoria Jurídica
    Paleta do logotipo: azul-marinho + dourado
    ========================================================== */
+/* Fontes hospedadas no próprio site (licença SIL OFL, ver assets/fonts). Nada é carregado do Google. */
+@font-face { font-family: "Cormorant Garamond"; src: url("assets/fonts/cormorant-garamond.woff") format("woff"); font-weight: 400 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cormorant Garamond"; src: url("assets/fonts/cormorant-garamond-italic.woff") format("woff"); font-weight: 400 600; font-style: italic; font-display: swap; }
+@font-face { font-family: "Manrope"; src: url("assets/fonts/manrope.woff") format("woff"); font-weight: 400 600; font-style: normal; font-display: swap; }
+
 :root {
   /* cor */
   --navy-900: #081221;
@@ -398,6 +403,18 @@ button { font: inherit; }
 .map__note { font-size: 12.5px; color: rgba(255,255,255,.62); }
 .map .btn--gold::after { background: var(--white); }
 
+/* ---------- página de privacidade ---------- */
+.page-simple .header { position: sticky; top: 0; }
+.page-simple .header .textlink { color: var(--gold-ink); white-space: nowrap; }
+.legal { padding-top: clamp(56px, 8vw, 96px); }
+.legal__wrap { max-width: 760px; }
+.legal__date { color: var(--muted); font-size: 14.5px; margin: 10px 0 36px; }
+.legal h2 { font-size: clamp(23px, 2.2vw, 28px); color: var(--navy-800); margin: 36px 0 10px; }
+.legal p { font-size: 16.5px; color: #2a3445; max-width: 66ch; }
+.legal a:not(.textlink) { color: var(--gold-ink); border-bottom: 1px solid currentColor; }
+.footer__links { margin: 0; font-size: 13.5px; }
+.footer__links a { color: var(--gold-light); border-bottom: 1px solid rgba(207,176,122,.4); }
+
 /* ---------- rodapé ---------- */
 .footer { background: var(--navy-900); color: rgba(255,255,255,.6); padding: 64px 0 40px; }
 .footer__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 60px; align-items: center; }
@@ -520,6 +537,7 @@ button { font: inherit; }
   .contact__v { font-size: 28px; }
   .contact__v--sm { font-size: 19px; }
   .footer__inner { grid-template-columns: 1fr; }
+  .page-simple .header .brand__text, .page-simple .header .brand__rule { display: none; }
   .portrait { max-width: 260px; margin-left: 12px; }
 }
 
