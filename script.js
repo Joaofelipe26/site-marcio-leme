@@ -119,18 +119,6 @@
     if (!mobile.matches && !vbtns.some(b => b.getAttribute('aria-expanded') === 'true')) showArea(vbtns[0], true);
   });
 
-  /* Mapas: carregam do Google só depois do clique */
-  document.querySelectorAll('.map').forEach(map => {
-    map.querySelector('.map__load').addEventListener('click', () => {
-      const f = document.createElement('iframe');
-      f.src = 'https://maps.google.com/maps?q=' + encodeURIComponent(map.dataset.q) + '&z=16&output=embed';
-      f.title = map.dataset.title;
-      f.referrerPolicy = 'no-referrer-when-downgrade';
-      map.innerHTML = '';
-      map.appendChild(f);
-    });
-  });
-
   /* Linha do tempo: desenha também quando a seção aparece com a aba "Formação" aberta */
   const formPanel = document.getElementById('p-form');
   const tlIO = new IntersectionObserver(es => es.forEach(e => {

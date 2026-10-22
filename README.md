@@ -31,10 +31,17 @@ The tabs keep the page short. All tab content is in the HTML, so search engines 
 2. In `index.html`, find the comment in `<figure class="portrait">`.
 3. Replace the `<span class="portrait__ph">` element with the `<img>` element from the comment.
 
-## Map
+## Maps
 
-The map loads from Google only after the user clicks "Mostrar mapa".
-This keeps the page fast and sets no Google cookies before consent (LGPD).
+Each office shows a static map image (`assets/mapa-sp.svg`, `assets/mapa-itapetininga.svg`).
+The page loads nothing from Google. The "Ir até lá" button opens the route in Google Maps.
+
+To use a real map image:
+
+1. Open openstreetmap.org and find the address.
+2. Click **Share > Image** and download a PNG.
+3. Put the file in `assets/` and change the `src` value of the map `<img>` in `index.html`.
+4. Add the credit "© OpenStreetMap contributors" below the map (license requirement).
 
 ## Publish with GitHub Pages
 
