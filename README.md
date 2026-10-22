@@ -17,7 +17,7 @@ The website has no build step and no dependencies. To see it, open `index.html` 
 
 ## Sections
 
-1. Início: main title, monogram animation and four key facts.
+1. Início: main title, monogram animation and three key facts.
 2. § 1 O escritório: "about us" text and three work types.
 3. § 2 Áreas de atuação: 3 main areas (Empresarial, Cível e Consumidor, Trabalhista) and 9 other areas.
 4. § 3 Trajetória: photo area, profile and timeline.
