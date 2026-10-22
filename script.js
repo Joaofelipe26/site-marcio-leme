@@ -46,10 +46,27 @@
 
   /* Linha do tempo: desenha quando a aba "Formação" abre */
   const timeline = document.getElementById('timeline');
+  /* Cada ano acende e a linha dourada desce até o próximo ano.
+     No celular, o próximo ano só começa quando aparece na tela. */
+  const tlItems = [...timeline.querySelectorAll('.tl')];
+  let tlRun = 0;
+  const STEP = 800;
   const drawTimeline = () => {
-    timeline.classList.remove('is-drawn');
-    void timeline.offsetWidth; // reinicia a animação
+    const run = ++tlRun;
+    tlItems.forEach(li => li.classList.remove('is-on'));
     timeline.classList.add('is-drawn');
+    if (reduce) { tlItems.forEach(li => li.classList.add('is-on')); return; }
+    const step = i => {
+      if (run !== tlRun || i >= tlItems.length) return;
+      const li = tlItems[i];
+      const go = () => { if (run !== tlRun) return; li.classList.add('is-on'); setTimeout(() => step(i + 1), STEP); };
+      if (li.getBoundingClientRect().top < window.innerHeight * 0.85) { go(); return; }
+      const wait = new IntersectionObserver(es => {
+        if (es[0].isIntersecting) { wait.disconnect(); go(); }
+      }, { rootMargin: '0px 0px -15% 0px' });
+      wait.observe(li);
+    };
+    setTimeout(() => step(0), 300);
   };
 
   /* Abas horizontais */
@@ -62,7 +79,10 @@
         t.tabIndex = on ? 0 : -1;
         document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
       });
-      if (tab.getAttribute('aria-controls') === 'p-form') drawTimeline();
+      if (tab.getAttribute('aria-controls') === 'p-form') {
+        timeline.classList.remove('is-drawn'); tlRun++; tlItems.forEach(li => li.classList.remove('is-on'));
+        requestAnimationFrame(() => { if (!timeline.classList.contains('is-drawn') && timeline.getBoundingClientRect().top < window.innerHeight * 0.85) drawTimeline(); });
+      }
     };
     tabs.forEach((t, i) => {
       t.addEventListener('click', () => select(t));
@@ -120,11 +140,14 @@
   });
 
   /* Linha do tempo: desenha também quando a seção aparece com a aba "Formação" aberta */
+  /* A linha só se desenha quando está visível na tela (importante no celular) */
   const formPanel = document.getElementById('p-form');
+  let tlVisible = false;
   const tlIO = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting && !formPanel.hidden && !timeline.classList.contains('is-drawn')) drawTimeline();
-  }), { threshold: 0.3 });
-  tlIO.observe(document.getElementById('trajetoria'));
+    tlVisible = e.isIntersecting;
+    if (tlVisible && !formPanel.hidden && !timeline.classList.contains('is-drawn')) drawTimeline();
+  }), { threshold: 0.25 });
+  tlIO.observe(timeline);
 
   /* Foto: abre de baixo para cima quando aparece */
   const portrait = document.querySelector('.portrait');
