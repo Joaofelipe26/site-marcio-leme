@@ -44,12 +44,28 @@
   window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
   update();
 
-  /* Linha do tempo: desenha quando a aba "Formação" abre */
+  /* Linha do tempo: a linha dourada desce em 3,2 s, em velocidade constante.
+     Cada ano acende no instante em que a linha chega até ele. */
   const timeline = document.getElementById('timeline');
+  const TL_DUR = 3.2, TL_DELAY = 0.3;
   const drawTimeline = () => {
     timeline.classList.remove('is-drawn');
+    const top = timeline.getBoundingClientRect().top + 16;
+    const len = timeline.getBoundingClientRect().bottom - 8 - top;
+    timeline.style.setProperty('--tl-dur', TL_DUR + 's');
+    timeline.querySelectorAll('.tl').forEach(li => {
+      const dot = li.getBoundingClientRect().top + 16 - top;
+      const at = TL_DELAY + TL_DUR * Math.max(0, Math.min(1, dot / len));
+      li.style.setProperty('--at', at.toFixed(2) + 's');
+    });
     void timeline.offsetWidth; // reinicia a animação
     timeline.classList.add('is-drawn');
+  };
+  /* Só começa quando a linha do tempo está quase toda visível */
+  const tlInView = () => {
+    const r = timeline.getBoundingClientRect();
+    const vh = window.innerHeight;
+    return r.top < vh * 0.9 && (r.bottom < vh + 60 || r.top < vh * 0.2);
   };
 
   /* Abas horizontais */
@@ -62,7 +78,10 @@
         t.tabIndex = on ? 0 : -1;
         document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
       });
-      if (tab.getAttribute('aria-controls') === 'p-form') drawTimeline();
+      if (tab.getAttribute('aria-controls') === 'p-form') {
+        timeline.classList.remove('is-drawn');
+        requestAnimationFrame(() => { if (tlInView()) drawTimeline(); });
+      }
     };
     tabs.forEach((t, i) => {
       t.addEventListener('click', () => select(t));
@@ -121,10 +140,10 @@
 
   /* Linha do tempo: desenha também quando a seção aparece com a aba "Formação" aberta */
   const formPanel = document.getElementById('p-form');
-  const tlIO = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting && !formPanel.hidden && !timeline.classList.contains('is-drawn')) drawTimeline();
-  }), { threshold: 0.3 });
-  tlIO.observe(document.getElementById('trajetoria'));
+  const checkTimeline = () => {
+    if (!formPanel.hidden && !timeline.classList.contains('is-drawn') && tlInView()) drawTimeline();
+  };
+  window.addEventListener('scroll', () => requestAnimationFrame(checkTimeline), { passive: true });
 
   /* Foto: abre de baixo para cima quando aparece */
   const portrait = document.querySelector('.portrait');
