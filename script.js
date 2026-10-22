@@ -12,12 +12,21 @@
     Promise.race([document.fonts.ready, new Promise(r => setTimeout(r, 1200))]).then(start);
   } else { start(); }
 
-  /* Menu mobile */
-  const closeMenu = () => { document.body.classList.remove('menu-open'); burger.setAttribute('aria-expanded', 'false'); };
+  /* Menu mobile: gaveta lateral que empurra o site para a esquerda */
+  const scrim = document.createElement('div');
+  scrim.className = 'scrim';
+  document.body.appendChild(scrim);
+  const closeMenu = () => {
+    document.body.classList.remove('menu-open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Abrir menu');
+  };
   burger.addEventListener('click', () => {
     const open = document.body.classList.toggle('menu-open');
     burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
   });
+  scrim.addEventListener('click', closeMenu);
   nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 
@@ -92,10 +101,21 @@
       next.focus(); showArea(next, true);
     });
   });
+  /* Toque no celular: destaca o bloco de "Quem somos" e "Diferenciais" (no computador, o mouse faz isso) */
+  if (!window.matchMedia('(hover: hover)').matches) {
+    const blocks = [...document.querySelectorAll('.pillar, .diffs li')];
+    blocks.forEach(el => el.addEventListener('click', () => {
+      const on = !el.classList.contains('is-active');
+      blocks.forEach(b => b.classList.remove('is-active'));
+      el.classList.toggle('is-active', on);
+    }));
+  }
+
   /* No celular, a lista começa fechada */
   if (mobile.matches) showArea(null, false);
   /* No computador, nunca deixar o painel vazio */
   mobile.addEventListener('change', () => {
+    closeMenu();
     if (!mobile.matches && !vbtns.some(b => b.getAttribute('aria-expanded') === 'true')) showArea(vbtns[0], true);
   });
 
@@ -110,6 +130,13 @@
       map.appendChild(f);
     });
   });
+
+  /* Linha do tempo: desenha também quando a seção aparece com a aba "Formação" aberta */
+  const formPanel = document.getElementById('p-form');
+  const tlIO = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting && !formPanel.hidden && !timeline.classList.contains('is-drawn')) drawTimeline();
+  }), { threshold: 0.3 });
+  tlIO.observe(document.getElementById('trajetoria'));
 
   /* Foto: abre de baixo para cima quando aparece */
   const portrait = document.querySelector('.portrait');
