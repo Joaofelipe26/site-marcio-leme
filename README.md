@@ -26,7 +26,7 @@ The website has no build step and no dependencies. To see it, open `index.html` 
 
 1. Início: main title, monogram animation and three key facts.
 2. § 1 O escritório: tabs "Quem somos" and "Diferenciais".
-3. § 2 Áreas de atuação: vertical tabs on desktop, accordion on phones. 3 main areas and 9 other areas.
+3. § 2 Áreas de atuação: vertical tabs on desktop, accordion on phones. 6 main areas and 6 other areas.
 4. § 3 Perfil: photo and tabs "Sobre" and "Formação" (timeline).
 5. § 4 Contato: tabs "Fale conosco", "São Paulo" and "Itapetininga", with a map for each office.
 
