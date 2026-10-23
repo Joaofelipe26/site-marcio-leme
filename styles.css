@@ -430,11 +430,11 @@ a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation
 .footer__note { font-size: 13.5px; margin: 0; }
 .footer__social {
   justify-self: end;
-  display: grid; place-items: center; width: 44px; height: 44px; margin-right: -10px;
-  color: #5876a6; /* azul mais claro que o fundo (contraste 4:1) */
+  display: grid; place-items: center; width: 48px; height: 48px; margin-right: -10px;
+  color: #6f8cbb; /* azul mais claro que o fundo (contraste 5:1) */
   transition: color var(--t-fast) var(--ease-out), transform var(--t-ui) var(--ease-out);
 }
-.footer__social svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+.footer__social svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.7; }
 .footer__social svg .dot { fill: currentColor; stroke: none; }
 .footer__social:active { color: #9db3d6; }
 @media (hover: hover) { .footer__social:hover { color: #9db3d6; transform: translateY(-2px); } }
@@ -561,6 +561,7 @@ a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation
   .contact__v--sm { font-size: 19px; }
   .footer__inner { grid-template-columns: 1fr; }
   .footer__social { justify-self: start; margin: -12px 0 0 -10px; }
+  .footer__social svg { width: 30px; height: 30px; }
   .page-simple .header .brand__text, .page-simple .header .brand__rule { display: none; }
   .portrait { max-width: 220px; margin-left: 12px; margin-bottom: 32px; }
 }
