@@ -13,6 +13,7 @@ The website text is in Portuguese.
 | `assets/logo-mla.png` | Original logo, transparent background |
 | `assets/favicon.svg` | Browser icon |
 | `assets/icon-192.png`, `icon-512.png`, `apple-touch-icon.png` | Phone and app icons |
+| `assets/marcio-*.webp`, `marcio-960.jpg` | Photo of Dr. Márcio in 3 sizes |
 | `assets/og-image.png` | Share image (1200 x 630 px) for WhatsApp, LinkedIn and others |
 | `assets/fonts/` | Self-hosted fonts (Cormorant Garamond, Manrope) and their licenses (SIL OFL) |
 | `privacidade.html` | Privacy policy page |
@@ -30,11 +31,13 @@ The website has no build step and no dependencies. To see it, open `index.html` 
 
 The tabs keep the page short. All tab content is in the HTML, so search engines can read it.
 
-## Add the photo
+## Photo
 
-1. Put the photo file in `assets/` (for example, `assets/marcio.webp`, 720 x 900 px or larger).
-2. In `index.html`, find the comment in `<figure class="portrait">`.
-3. Replace the `<span class="portrait__ph">` element with the `<img>` element from the comment.
+The "Trajetória" section shows the photo of Dr. Márcio (original: 2000 x 2500 px, 4:5).
+The site uses these versions: `assets/marcio-640.webp`, `marcio-960.webp`, `marcio-1280.webp`
+and `marcio-960.jpg` (for old browsers). The browser selects the correct size.
+
+To change the photo, make new files with the same names and the same 4:5 ratio.
 
 ## Maps
 
@@ -77,6 +80,5 @@ The content obeys the OAB Code of Ethics and Provimento 205/2021 of the CFOAB:
 
 ## Open items
 
-- [ ] Get a professional photo of Dr. Márcio for the "Trajetória" section.
 - [ ] Register a domain name.
 - [ ] Get final text approval from Dr. Márcio.

@@ -342,7 +342,8 @@ a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation
   transition: clip-path 2s var(--ease-out);
 }
 .portrait.is-in { clip-path: inset(0); }
-.portrait img { width: 100%; height: 100%; object-fit: cover; }
+.portrait picture { display: block; width: 100%; height: 100%; }
+.portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .portrait.is-in .portrait__ph { animation: fade 1.6s var(--ease-out) 1s both; }
 .portrait__ph { font-family: var(--serif); font-size: 92px; letter-spacing: -.02em; color: transparent; -webkit-text-stroke: 1px rgba(207,176,122,.45); }
 .portrait__ph em { font-style: normal; -webkit-text-stroke-color: var(--gold-light); }

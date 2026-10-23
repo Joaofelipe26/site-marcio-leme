@@ -289,10 +289,11 @@
 <section class="section section--dark" id="trajetoria">
   <div class="wrap split">
     <div class="split__head">
-      <figure class="portrait" aria-label="Espaço para a foto do Dr. Márcio Leme de Almeida">
-        <!-- Para usar a foto: troque o span abaixo por
-             <img src="assets/marcio.webp" width="720" height="900" alt="Márcio Leme de Almeida"> -->
-        <span class="portrait__ph" aria-hidden="true">M<em>L</em>A</span>
+      <figure class="portrait">
+        <picture>
+          <source type="image/webp" srcset="assets/marcio-640.webp 640w, assets/marcio-960.webp 960w, assets/marcio-1280.webp 1280w" sizes="(max-width: 640px) 220px, 320px">
+          <img src="assets/marcio-960.jpg" width="960" height="1200" alt="Márcio Leme de Almeida, advogado, OAB/SP 250.781" loading="lazy" decoding="async">
+        </picture>
       </figure>
       <p class="sect sect--dark"><span class="sect__n">§ 3</span> Trajetória</p>
       <h2 class="title">Márcio Leme de Almeida</h2>
