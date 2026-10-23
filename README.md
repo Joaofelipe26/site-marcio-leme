@@ -18,6 +18,7 @@ The website text is in Portuguese.
 | `assets/fonts/` | Self-hosted fonts (Cormorant Garamond, Manrope) and their licenses (SIL OFL) |
 | `privacidade.html` | Privacy policy page |
 | `robots.txt`, `sitemap.xml`, `site.webmanifest` | Search engine and phone settings |
+| `llms.txt` | Short summary of the office for AI assistants (ChatGPT, Gemini, Perplexity) |
 | `vercel.json` | Vercel settings: browser cache and security headers |
 
 The website has no build step and no dependencies. To see it, open `index.html` in a browser.
