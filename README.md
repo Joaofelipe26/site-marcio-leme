@@ -42,15 +42,13 @@ To change the photo, make new files with the same names and the same 4:5 ratio.
 
 ## Maps
 
-Each office shows a static map image (`assets/mapa-sp.svg`, `assets/mapa-itapetininga.svg`).
+Each office shows an aerial image with the building marked:
+`assets/vista-sp-*` (São Paulo) and `assets/vista-itapetininga-*` (Itapetininga).
+Each image has 3 files: WebP 800 px, WebP 1200 px and JPG 1200 px (for old browsers). The ratio is 4:3.
 The page loads nothing from Google. The "Ir até lá" button opens the route in Google Maps.
 
-To use a real map image:
-
-1. Open openstreetmap.org and find the address.
-2. Click **Share > Image** and download a PNG.
-3. Put the file in `assets/` and change the `src` value of the map `<img>` in `index.html`.
-4. Add the credit "© OpenStreetMap contributors" below the map (license requirement).
+The `object-position` value on each `<img>` keeps the marker in view when the image is cut on different screens.
+If you change an image, change this value to the position of the marker.
 
 ## Publish with Vercel
 
