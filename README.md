@@ -62,7 +62,7 @@ To use a real map image:
 Each push to `main` updates the site on Vercel.
 `vercel.json` sets the browser cache (fonts: 1 year, images: 1 week) and the security headers.
 
-## Publish with GitHub Pages
+## Publish with GitHub Pages (old address, can be turned off)
 
 1. Open **Settings > Pages** in the repository.
 2. Set **Source** to **Deploy from a branch**.
@@ -74,12 +74,12 @@ To use a domain name, open **Settings > Pages > Custom domain**.
 
 ## Change the site address
 
-The full address `https://joaofelipe26.github.io/site-marcio-leme/` is in these files:
+The full address `https://marciolemeadv.vercel.app/` is in these files:
 `index.html` (canonical and `og:` tags), `privacidade.html`, `robots.txt` and `sitemap.xml`.
 When the domain name is ready, change the address in all of these files.
 
-Note: search engines read `robots.txt` only at the root of a domain.
-It starts to work when the site has its own domain.
+The official address is `https://marciolemeadv.vercel.app/` (Vercel).
+`site-marcio-leme.vercel.app` redirects to it.
 
 ## Legal compliance
 
