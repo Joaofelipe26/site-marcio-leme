@@ -27,14 +27,14 @@ The website has no build step and no dependencies. To see it, open `index.html` 
 1. Início: main title, monogram animation and three key facts.
 2. § 1 O escritório: tabs "Quem somos" and "Diferenciais".
 3. § 2 Áreas de atuação: vertical tabs on desktop, accordion on phones. 3 main areas and 9 other areas.
-4. § 3 Trajetória: photo area and tabs "Perfil" and "Formação" (timeline).
+4. § 3 Perfil: photo and tabs "Sobre" and "Formação" (timeline).
 5. § 4 Contato: tabs "Fale conosco", "São Paulo" and "Itapetininga", with a map for each office.
 
 The tabs keep the page short. All tab content is in the HTML, so search engines can read it.
 
 ## Photo
 
-The "Trajetória" section shows the photo of Dr. Márcio (original: 2000 x 2500 px, 4:5).
+The "Perfil" section shows the photo of Dr. Márcio (original: 2000 x 2500 px, 4:5).
 The site uses these versions: `assets/marcio-640.webp`, `marcio-960.webp`, `marcio-1280.webp`
 and `marcio-960.jpg` (for old browsers). The browser selects the correct size.
 
