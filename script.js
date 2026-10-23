@@ -37,7 +37,8 @@
     ticking = false;
     const y = window.scrollY;
     header.classList.toggle('is-scrolled', y > 40);
-    if (!reduce && seal && y < window.innerHeight * 1.2) {
+    /* parallax só no computador: no celular, a rolagem fica mais leve */
+    if (!reduce && seal && !mobile.matches && y < window.innerHeight * 1.2) {
       seal.style.transform = `translateY(calc(-50% + ${y * 0.22}px))`;
     }
   };
