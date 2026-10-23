@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://marciolemeadv.vercel.app/sitemap.xml
+Sitemap: https://marciolemeadv.com.br/sitemap.xml

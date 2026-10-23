@@ -70,14 +70,22 @@ Each push to `main` updates the site on Vercel.
 The website address is `https://<user>.github.io/<repository>/`.
 To use a domain name, open **Settings > Pages > Custom domain**.
 
-## Change the site address
+## Site address
 
-The full address `https://marciolemeadv.vercel.app/` is in these files:
-`index.html` (canonical and `og:` tags), `privacidade.html`, `robots.txt` and `sitemap.xml`.
-When the domain name is ready, change the address in all of these files.
+The official address is `https://marciolemeadv.com.br/` (registered at Registro.br).
+`www.marciolemeadv.com.br` redirects to it.
+The old address `https://marciolemeadv.vercel.app/` also stays active.
 
-The official address is `https://marciolemeadv.vercel.app/` (Vercel).
-`site-marcio-leme.vercel.app` redirects to it.
+The full address is in these files:
+`index.html` (canonical, `og:` tags and JSON-LD), `privacidade.html`, `robots.txt` and `sitemap.xml`.
+If the address changes, change it in all of these files.
+
+### DNS at Registro.br
+
+| Type | Name | Value |
+|---|---|---|
+| A | (empty) | `216.198.79.1` |
+| CNAME | `www` | `cname.vercel-dns.com.` |
 
 ## Legal compliance
 
@@ -89,5 +97,5 @@ The content obeys the OAB Code of Ethics and Provimento 205/2021 of the CFOAB:
 
 ## Open items
 
-- [ ] Register a domain name.
+- [x] Register a domain name (marciolemeadv.com.br).
 - [ ] Get final text approval from Dr. Márcio.
