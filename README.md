@@ -18,6 +18,7 @@ The website text is in Portuguese.
 | `assets/fonts/` | Self-hosted fonts (Cormorant Garamond, Manrope) and their licenses (SIL OFL) |
 | `privacidade.html` | Privacy policy page |
 | `robots.txt`, `sitemap.xml`, `site.webmanifest` | Search engine and phone settings |
+| `vercel.json` | Vercel settings: browser cache and security headers |
 
 The website has no build step and no dependencies. To see it, open `index.html` in a browser.
 
@@ -50,6 +51,16 @@ To use a real map image:
 2. Click **Share > Image** and download a PNG.
 3. Put the file in `assets/` and change the `src` value of the map `<img>` in `index.html`.
 4. Add the credit "© OpenStreetMap contributors" below the map (license requirement).
+
+## Publish with Vercel
+
+1. Sign in at vercel.com with **Continue with GitHub**.
+2. Click **Add New > Project** and import `site-marcio-leme`.
+3. Keep the default settings (Framework Preset: **Other**, no build command).
+4. Click **Deploy**.
+
+Each push to `main` updates the site on Vercel.
+`vercel.json` sets the browser cache (fonts: 1 year, images: 1 week) and the security headers.
 
 ## Publish with GitHub Pages
 
