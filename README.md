@@ -75,7 +75,7 @@ To use a domain name, open **Settings > Pages > Custom domain**.
 
 The official address is `https://marciolemeadv.com.br/` (registered at Registro.br).
 `www.marciolemeadv.com.br` redirects to it.
-The old address `https://marciolemeadv.vercel.app/` also stays active.
+The old addresses `marciolemeadv.vercel.app` and `site-marcio-leme.vercel.app` redirect to it (308). The `redirects` rule in `vercel.json` does this.
 
 The full address is in these files:
 `index.html` (canonical, `og:` tags and JSON-LD), `privacidade.html`, `robots.txt` and `sitemap.xml`.
