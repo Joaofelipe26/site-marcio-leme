@@ -110,7 +110,11 @@
       const isOpen = b.getAttribute('aria-expanded') === 'true';
       if (mobile.matches) {                       // celular: abre e fecha
         showArea(b, !isOpen);
-        b.scrollIntoView({ block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
+        /* ao abrir, a área sobe para logo abaixo do cabeçalho: o texto fica todo à vista */
+        if (!isOpen) requestAnimationFrame(() => {
+          const top = b.getBoundingClientRect().top + window.scrollY - header.offsetHeight - 8;
+          window.scrollTo({ top, behavior: reduce ? 'auto' : 'smooth' });
+        });
       } else showArea(b, true);                   // computador: sempre uma aberta
     });
     b.addEventListener('keydown', e => {
