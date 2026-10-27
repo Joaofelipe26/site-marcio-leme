@@ -1,0 +1,4 @@
+Contact: mailto:marcio.leme@adv.oabsp.org.br
+Expires: 2027-10-27T00:00:00.000Z
+Preferred-Languages: pt, en
+Canonical: https://marciolemeadv.com.br/.well-known/security.txt
