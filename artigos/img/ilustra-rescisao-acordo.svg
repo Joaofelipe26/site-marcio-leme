@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="t"><title id="t">Aperto de mãos sobre um documento de acordo</title>
+<rect width="800" height="420" fill="#edeff2"/>
+<rect x="250" y="210" width="300" height="170" fill="#f8f8f6" stroke="#0b1628" stroke-width="3"/>
+<g stroke="#4f596a" stroke-width="3" stroke-linecap="round"><path d="M280 250 H520 M280 275 H520 M280 300 H460"/></g>
+<path d="M290 345 C305 332 318 352 334 340 M460 345 C475 332 488 352 504 340" fill="none" stroke="#0b1628" stroke-width="2.5" stroke-linecap="round"/>
+<g fill="#0b1628"><path d="M60 170 L230 140 L240 185 L70 220 Z"/><path d="M740 170 L570 140 L560 185 L730 220 Z"/></g>
+<g fill="#f8f8f6" stroke="#0b1628" stroke-width="3" stroke-linejoin="round"><path d="M228 140 C270 125 330 125 360 140 L420 168 C430 174 424 188 412 186 L360 176 L300 190 C275 196 250 192 238 185 Z"/>
+<path d="M572 140 C530 125 470 128 440 142 L395 162 C384 168 388 184 402 182 L455 176 L500 188 C525 196 550 192 562 185 Z"/></g>
+<g font-family="Georgia, serif" fill="#b08d4f" font-size="20" text-anchor="middle"><text x="400" y="110">½</text></g>
+</svg>

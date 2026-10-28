@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="t"><title id="t">Calendário com 10 dias marcados ao lado de um envelope</title>
+<rect width="800" height="420" fill="#edeff2"/>
+<rect x="160" y="80" width="300" height="260" fill="#f8f8f6" stroke="#0b1628" stroke-width="3"/>
+<rect x="160" y="80" width="300" height="50" fill="#0b1628"/>
+<g stroke="#0b1628" stroke-width="3" stroke-linecap="round"><path d="M210 66 v30 M410 66 v30"/></g>
+<g fill="none" stroke="#d9dce2" stroke-width="2"><path d="M160 180 H460 M160 230 H460 M160 280 H460 M220 130 V340 M280 130 V340 M340 130 V340 M400 130 V340"/></g>
+<g fill="#b08d4f" opacity=".85"><rect x="164" y="134" width="52" height="42"/><rect x="224" y="134" width="52" height="42"/><rect x="284" y="134" width="52" height="42"/><rect x="344" y="134" width="52" height="42"/><rect x="404" y="134" width="52" height="42"/><rect x="164" y="184" width="52" height="42"/><rect x="224" y="184" width="52" height="42"/><rect x="284" y="184" width="52" height="42"/><rect x="344" y="184" width="52" height="42"/><rect x="404" y="184" width="52" height="42"/></g>
+<text x="310" y="113" text-anchor="middle" font-family="Georgia, serif" font-size="20" letter-spacing="3" fill="#f8f8f6">10 DIAS</text>
+<g transform="translate(520 170)"><rect width="170" height="110" fill="#f8f8f6" stroke="#0b1628" stroke-width="3"/><path d="M0 0 L85 60 L170 0" fill="none" stroke="#0b1628" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="140" cy="88" r="14" fill="none" stroke="#b08d4f" stroke-width="3"/><path d="M133 88 l5 5 l9 -10" fill="none" stroke="#b08d4f" stroke-width="3" stroke-linecap="round"/></g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="t"><title id="t">Pessoa cuidando do jardim em frente à casa ao longo dos anos</title>
+<rect width="800" height="420" fill="#edeff2"/>
+<g stroke="#0b1628" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M300 190 L420 100 L540 190" fill="none"/><rect x="320" y="185" width="200" height="150" fill="#f8f8f6"/>
+<rect x="400" y="265" width="40" height="70" fill="#0b1628"/><rect x="345" y="215" width="36" height="32" fill="none"/><rect x="462" y="215" width="36" height="32" fill="none"/>
+<path d="M120 335 H700"/>
+<path d="M600 335 V280 M600 290 C585 280 580 262 590 250 M600 300 C615 290 622 272 612 260" fill="none"/>
+</g>
+<g fill="#0b1628"><circle cx="210" cy="250" r="18"/><path d="M180 335 C180 290 240 290 240 335 Z"/></g>
+<path d="M232 300 L262 322" stroke="#0b1628" stroke-width="4" stroke-linecap="round"/>
+<g font-family="Georgia, serif" fill="#b08d4f" font-size="20" text-anchor="middle"><text x="130" y="110">2011</text><text x="420" y="70">→ 2026</text></g>
+<path d="M160 104 C250 70 330 62 380 66" fill="none" stroke="#b08d4f" stroke-width="2" stroke-dasharray="6 7"/>
+</svg>
