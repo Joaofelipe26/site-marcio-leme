@@ -523,6 +523,7 @@ a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation
   body.menu-open .nav a:nth-child(3) { transition-delay: .28s; }
   body.menu-open .nav a:nth-child(4) { transition-delay: .33s; }
   body.menu-open .nav a:nth-child(5) { transition-delay: .38s; }
+  body.menu-open .nav a:nth-child(6) { transition-delay: .43s; }
   /* o site é empurrado para a esquerda, sem ficar por baixo do menu */
   main, .footer, .wa-float, .header .brand, .scrim { transition: transform var(--t-menu) var(--ease-io); }
   body.menu-open main, body.menu-open .footer, body.menu-open .header .brand, body.menu-open .scrim { transform: translateX(calc(-1 * var(--drawer))); }
