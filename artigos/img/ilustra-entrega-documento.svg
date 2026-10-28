@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="t"><title id="t">Duas mãos passando um documento com selo</title>
+<rect width="800" height="420" fill="#edeff2"/>
+<g fill="none" stroke="#0b1628" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<!-- manga e mão esquerda -->
+<path d="M40 300 L190 250 L215 300 L65 355 Z" fill="#0b1628"/>
+<path d="M205 255 C240 238 268 236 292 246 L330 262 C340 266 338 280 327 280 L292 276"/>
+<path d="M214 300 C236 312 266 316 292 310"/>
+<path d="M292 246 C300 258 300 272 292 276"/>
+<!-- manga e mão direita -->
+<path d="M760 150 L610 190 L590 140 L740 95 Z" fill="#0b1628"/>
+<path d="M600 185 C566 200 540 204 516 198 L478 184 C468 180 470 166 481 166 L516 168"/>
+<path d="M592 142 C570 132 540 128 514 134"/>
+</g>
+<!-- documento -->
+<g transform="rotate(-14 400 215)">
+<rect x="300" y="120" width="210" height="270" rx="4" fill="#f8f8f6" stroke="#0b1628" stroke-width="3"/>
+<g stroke="#4f596a" stroke-width="3" stroke-linecap="round">
+<path d="M330 165 H480"/><path d="M330 190 H480"/><path d="M330 215 H450"/><path d="M330 240 H480"/><path d="M330 265 H420"/></g>
+<circle cx="450" cy="330" r="30" fill="none" stroke="#b08d4f" stroke-width="3"/><circle cx="450" cy="330" r="21" fill="none" stroke="#b08d4f" stroke-width="1.5"/>
+<path d="M440 330 l7 7 l13 -15" fill="none" stroke="#b08d4f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M330 330 C345 315 355 345 370 325 C380 312 388 335 400 328" fill="none" stroke="#0b1628" stroke-width="2.5" stroke-linecap="round"/>
+</g>
+</svg>

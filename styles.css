@@ -489,6 +489,9 @@ a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation
 .post-card__meta, .post-empty { font-size: 14px; color: var(--muted); margin: 0; }
 .post__cover { margin: 0 0 32px; overflow: hidden; border: 1px solid var(--line); }
 .post__cover img { display: block; width: 100%; height: auto; }
+.post__fig { margin: 36px 0; }
+.post__fig img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+.post__fig figcaption { margin-top: 10px; font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--muted); }
 .post__lead { font-size: 18.5px !important; color: var(--ink) !important; }
 .post__cta { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 28px; margin: 48px 0 28px; padding: 30px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .post__note { font-size: 13.5px !important; color: var(--muted) !important; }

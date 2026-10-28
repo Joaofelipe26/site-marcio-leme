@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-labelledby="t"><title id="t">Carimbo de cartório sobre uma escritura</title>
+<rect width="800" height="420" fill="#edeff2"/>
+<rect x="190" y="70" width="420" height="300" rx="4" fill="#f8f8f6" stroke="#0b1628" stroke-width="3"/>
+<g stroke="#4f596a" stroke-width="3" stroke-linecap="round"><path d="M230 120 H570"/><path d="M230 148 H570"/><path d="M230 176 H520"/><path d="M230 204 H570"/><path d="M230 232 H460"/></g>
+<text x="400" y="104" text-anchor="middle" font-family="Georgia, serif" font-size="18" letter-spacing="4" fill="#0b1628">ESCRITURA PÚBLICA</text>
+<!-- marca do carimbo -->
+<g transform="rotate(-10 470 300)"><circle cx="470" cy="300" r="48" fill="none" stroke="#b08d4f" stroke-width="3"/><circle cx="470" cy="300" r="38" fill="none" stroke="#b08d4f" stroke-width="1.5"/>
+<text x="470" y="306" text-anchor="middle" font-family="Georgia, serif" font-size="16" letter-spacing="2" fill="#b08d4f">NOTAS</text></g>
+<!-- carimbo -->
+<g fill="none" stroke="#0b1628" stroke-width="3" stroke-linejoin="round">
+<rect x="275" y="250" width="110" height="26" rx="4" fill="#0b1628"/>
+<path d="M310 250 V205 H350 V250"/>
+<path d="M300 205 C300 172 360 172 360 205 Z" fill="#b08d4f" stroke="#0b1628"/>
+</g>
+<path d="M285 296 C300 288 318 300 333 292 C346 285 358 298 372 290" fill="none" stroke="#0b1628" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
