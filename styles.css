@@ -346,16 +346,28 @@ a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation
 
 /* ---------- § 3 trajetória ---------- */
 .portrait {
-  margin: 0 0 40px; width: 100%; max-width: 320px; aspect-ratio: 4 / 5;
-  background: var(--navy-700);
-  outline: 1px solid rgba(176,141,79,.55); outline-offset: 12px;
-  display: grid; place-items: center; overflow: hidden;
-  clip-path: inset(100% 0 0 0);
-  transition: clip-path 2s var(--ease-out);
+  position: relative; margin: 14px 14px 54px; width: calc(100% - 28px); max-width: 320px; aspect-ratio: 4 / 5;
 }
-.portrait.is-in { clip-path: inset(0); }
-.portrait picture { display: block; width: 100%; height: 100%; }
-.portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.portrait::before {
+  content: ""; position: absolute; inset: -14px; border: 1px solid rgba(207,176,122,.6); pointer-events: none;
+  opacity: 0; transform: translate(14px, 14px);
+  transition: opacity 1.2s var(--ease-out) .5s, transform 1.6s var(--ease-out) .5s;
+}
+.portrait::after {
+  content: ""; position: absolute; left: -14px; bottom: -14px; width: 56px; height: 56px; pointer-events: none;
+  border-left: 2px solid var(--gold-light); border-bottom: 2px solid var(--gold-light);
+  opacity: 0; transition: opacity 1s var(--ease-out) 1.4s;
+}
+.portrait.is-in::before { opacity: 1; transform: none; }
+.portrait.is-in::after { opacity: 1; }
+.portrait picture {
+  display: block; width: 100%; height: 100%; overflow: hidden; background: var(--navy-700);
+  clip-path: inset(100% 0 0 0); transition: clip-path 2s var(--ease-out);
+}
+.portrait.is-in picture { clip-path: inset(0); }
+.portrait img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; transform: scale(1.06); transition: transform 2.4s var(--ease-out); }
+.portrait.is-in img { transform: scale(1); }
+@media (hover: hover) { .portrait:hover img { transform: scale(1.03); transition-duration: .8s; } }
 .portrait.is-in .portrait__ph { animation: fade 1.6s var(--ease-out) 1s both; }
 .portrait__ph { font-family: var(--serif); font-size: 92px; letter-spacing: -.02em; color: transparent; -webkit-text-stroke: 1px rgba(207,176,122,.45); }
 .portrait__ph em { font-style: normal; -webkit-text-stroke-color: var(--gold-light); }
@@ -675,7 +687,7 @@ a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation
   .footer__social { justify-self: start; margin: -12px 0 0 -10px; }
   .footer__social svg { width: 30px; height: 30px; }
   .page-simple .header .brand__text, .page-simple .header .brand__rule { display: none; }
-  .portrait { max-width: 220px; margin-left: 12px; margin-bottom: 32px; }
+  .portrait { max-width: 220px; margin: 14px 14px 40px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -684,7 +696,9 @@ a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation
   .hero__title .line > span { transform: none !important; }
   .hero__lead, .hero__actions, .hero__facts, .wa-float { opacity: 1 !important; transform: none !important; }
   .hero__seal text { stroke-dashoffset: 0 !important; }
-  .portrait { clip-path: none !important; }
+  .portrait picture { clip-path: none !important; }
+  .portrait::before, .portrait::after { opacity: 1 !important; transform: none !important; }
+  .portrait img { transform: none !important; }
   .tl > * { opacity: 1 !important; }
   .timeline::after { transform: none !important; }
   .timeline.is-drawn .tl::before { animation: none !important; background: var(--gold-light); }
